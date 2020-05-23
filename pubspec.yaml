@@ -12,6 +12,8 @@ description: A new Flutter application.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
+repository: https://github.com/hyerim1048/word-note.git
+issue_tracker: https://github.com/hyerim1048/word-note/issues
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

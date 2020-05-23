@@ -4,13 +4,29 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
+    const MaterialColor white = const MaterialColor(
+      0xFFFFFFFF,
+      const <int, Color>{
+        50: const Color(0xFFFFFFFF),
+        100: const Color(0xFFFFFFFF),
+        200: const Color(0xFFFFFFFF),
+        300: const Color(0xFFFFFFFF),
+        400: const Color(0xFFFFFFFF),
+        500: const Color(0xFFFFFFFF),
+        600: const Color(0xFFFFFFFF),
+        700: const Color(0xFFFFFFFF),
+        800: const Color(0xFFFFFFFF),
+        900: const Color(0xFFFFFFFF),
+      },
+    );
     return MaterialApp(
       title: 'Word Notes',
       theme: ThemeData(
         // This is the theme of your application
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: white,
       ),
       home: MyHomePage(title: 'Word Notes'),
     );
@@ -83,10 +99,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.0),
+        child: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text("Today's words"),
+          elevation: 0.0,
+          centerTitle: false,
+        ),
       ),
       body: _buildWordList(),
       floatingActionButton: FloatingActionButton(
