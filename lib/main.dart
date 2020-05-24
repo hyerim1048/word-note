@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
       title: 'Word Notes',
       theme: ThemeData(
         // This is the theme of your application
-        primarySwatch: white,
+        fontFamily: 'RedHatDisplay',
+        primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Word Notes'),
     );
@@ -56,9 +57,36 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<String> _wordList = <String>[];
 
   Widget _buildRow(String word) {
+    /*
     return ListTile(
       title: Text(word),
-    );
+    );*/
+    return Container(
+        width: 100.0,
+        height: 130.0,
+        margin: EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: 2.0, color: Colors.grey, offset: Offset(1.0, 3.0))
+            ]),
+        child: Container(
+          padding: EdgeInsets.all(30.0),
+          child: Align(
+            alignment: Alignment
+                .center, // Align however you like (i.e .centerRight, centerLeft)
+            child: Text(
+              word,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontFamily: 'RedHatDisplay',
+              ),
+            ),
+          ),
+        ));
   }
 
   Widget _buildWordList() {
@@ -99,12 +127,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text("Today's words"),
+          title: Text("Today's words", style: TextStyle(color: Colors.black)),
+          backgroundColor: Color(0xFFFFFFFF),
           elevation: 0.0,
           centerTitle: false,
         ),

@@ -36,6 +36,15 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: RedHatDisplay
+      fonts:
+        - asset: fonts/Red_Hat_Display/RedHatDisplay-Regular.ttf
+          weight: 400
+        - asset: fonts/Red_Hat_Display/RedHatDisplay-Bold.ttf
+          weight: 700
+        - asset: fonts/Red_Hat_Display/RedHatDisplay-Medium.ttf
+          weight: 500
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
